@@ -1,0 +1,15 @@
+<div class="container-fluid  py-3">
+  <h2>スケジュール新規作成</h2>
+  
+  <%= form_with(model: @schedule) do |form| %>
+    <%= render 'shared/form', form: form %>
+    <ul class="pt-3">
+      <li>
+        <%= form.submit "スケジュールを新規作成する" %>
+      </li>
+      <li>
+        <%= link_to 'スケジュール一覧に戻る', schedules_path %>
+      </li>
+    </ul>
+  <% end %>
+</div>

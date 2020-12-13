@@ -1,0 +1,41 @@
+main {
+    height: 100vh;
+    .container-fluid {
+        h2 {
+            font-size: 24px;
+            font-weight: bold; 
+        }
+        
+        table {
+            tr {
+                th, td {
+                    border: solid 1px;
+                    text-align: center;
+                    height: 45px;
+                }
+            }
+        }
+        
+        .schedules-list {
+            thead { background-color: #FFDFDF; }
+            tbody { background-color: #F1C8C861; }
+        }
+        
+        .schedule-detail, 
+        .schedule-form {
+            tr {
+                th { background-color: #FFDFDF; }
+                td { 
+                    background-color: #F1C8C861; 
+                    .memo {
+                        height: 150px;
+                    }
+                }
+            }
+        }
+        
+        ul {
+            li { list-style: none; }
+        }
+    }   
+}

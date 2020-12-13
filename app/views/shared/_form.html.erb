@@ -1,0 +1,39 @@
+  <% if @schedule.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+  
+        <ul>
+          <% @schedule.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <table class="schedule-form col-5">
+      <tbody>
+        <tr>
+          <th><%= form.label :title %></th>
+          <td class="form-group"><%= form.text_field :title, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th><%= form.label :start_date %></th>
+          <td class="form-group"><%= form.date_field :start_date, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th><%= form.label :end_date %></th>
+          <td class="form-group"><%= form.date_field :end_date, class: "form-control" %></td>
+        </tr>
+        <tr>
+          <th><%= form.label :week_end %></th>
+          <td>
+            <%= form.check_box :week_end %>
+            <p>終日の場合はチェックを入れます</p>
+          </td>
+        </tr>
+        <tr>
+          <th><%= form.label :content, class: "custom-control-label" %></th>
+          <td class="form-group"><%= form.text_area :content, class: "form-control memo" %></td>
+        </tr>
+      </tbody>
+    </table>
