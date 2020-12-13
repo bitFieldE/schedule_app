@@ -29,8 +29,9 @@ class SchedulesController < ApplicationController
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to :schedules, notice: 'スケジュールを登録しました' }
-        format.json { render :show, status: :created, location: @schedule }
+        format.json { render :index, status: :created, location: @schedule }
       else
+        flash.alert = "スケジュールを登録できませんでした"
         format.html { render :new }
         format.json { render json: @schedule.errors, status: :unprocessable_entity }
       end
@@ -42,9 +43,10 @@ class SchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @schedule.update(schedule_params)
-        format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }
-        format.json { render :show, status: :ok, location: @schedule }
+        format.html { redirect_to  :schedules, notice: 'スケジュールが更新されました' }
+        format.json { render :index, status: :ok, location: @schedule }
       else
+        flash.alert = "スケジュールを更新できませんでした"
         format.html { render :edit }
         format.json { render json: @schedule.errors, status: :unprocessable_entity }
       end

@@ -1,7 +1,5 @@
   <% if @schedule.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
-  
         <ul>
           <% @schedule.errors.each do |error| %>
             <li><%= error.full_message %></li>
@@ -22,7 +20,7 @@
         </tr>
         <tr>
           <th><%= form.label :end_date %></th>
-          <td class="form-group"><%= form.date_field :end_date, class: "form-control" %></td>
+          <td class="form-group"><%= form.date_field :end_date, class: "form-control end-date" %></td>
         </tr>
         <tr>
           <th><%= form.label :week_end %></th>
@@ -32,7 +30,7 @@
           </td>
         </tr>
         <tr>
-          <th><%= form.label :content, class: "custom-control-label" %></th>
+          <th><%= form.label :content %></th>
           <td class="form-group"><%= form.text_area :content, class: "form-control memo" %></td>
         </tr>
       </tbody>

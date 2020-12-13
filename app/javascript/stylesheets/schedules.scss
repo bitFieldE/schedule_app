@@ -1,6 +1,17 @@
 main {
-    height: 100vh;
+    height: auto;
     .container-fluid {
+        .alert {
+            text-align: center;
+            border: 2px solid #ec7592;
+            background-color: #ec98ac8f;  
+        }
+        .info {
+            text-align: center;
+            border: 2px solid #5cd075;
+            background-color:#98ecaa7a;
+        }
+        
         h2 {
             font-size: 24px;
             font-weight: bold; 
@@ -28,7 +39,7 @@ main {
                 td { 
                     background-color: #F1C8C861; 
                     .memo {
-                        height: 150px;
+                        height: 230px;
                     }
                 }
             }

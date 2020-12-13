@@ -1,5 +1,4 @@
 class Schedule < ApplicationRecord
-#    validates
-#    validates
-#    validates
+    validates :title, :start_date, :end_date, presence: true
+   # validate
 end

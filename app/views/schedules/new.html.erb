@@ -1,5 +1,11 @@
-<div class="container-fluid  py-3">
-  <h2>スケジュール新規作成</h2>
+<div class="container-fluid py-3">
+  <% if flash.alert %>
+    <div class="pt-5 col-4">
+      <p class="alert"><%= flash.alert %></p>  
+    </div>
+  <% else %>
+    <h2 class="pt-5 pb-3">スケジュール新規作成</h2>
+  <% end %>
   
   <%= form_with(model: @schedule) do |form| %>
     <%= render 'shared/form', form: form %>

@@ -1,10 +1,11 @@
 <div class="container-fluid py-3">
   
-  <h2>スケジュール一覧</h2>
+  <h2 class="pt-5 pb-3">スケジュール一覧</h2>
   
-  <p id="notice"><%= notice %></p>
-  
-  <table class="col-md-10 schedules-list">
+  <% if notice %>
+    <p id="notice" class="info col-4"><%= notice %></p>
+  <% end %>
+  <table class="col-md-10 col-sm-12 schedules-list">
     <thead>
       <tr>
         <th>ID</th>
@@ -20,9 +21,9 @@
     </thead>
   
     <tbody>
-      <% @schedules.each_with_index do |schedule, idx| %>
+      <% @schedules.each do |schedule| %>
         <tr>
-          <td><%= idx %></td>
+          <td><%= schedule.id %></td>
           <td><%= schedule.title %></td>
           <td><%= schedule.start_date&.strftime('%Y年%m月%d日') %></td>
           <td><%= schedule.end_date&.strftime('%Y年%m月%d日') %></td>
