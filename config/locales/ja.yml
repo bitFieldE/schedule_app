@@ -40,3 +40,6 @@ ja:
         end_date: 終了日
         week_end: 終日
         content: スケジュールメモ
+    errors:
+      messages:
+        early: は今日以降の日付で選択してください

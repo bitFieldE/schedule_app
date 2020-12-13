@@ -18,11 +18,16 @@ main {
         }
         
         table {
+            word-break: break-all;
+            
             tr {
                 th, td {
                     border: solid 1px;
                     text-align: center;
                     height: 45px;
+                }
+                .memo {
+                    text-align: start;
                 }
             }
         }
