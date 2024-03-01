@@ -1,0 +1,43 @@
+<div class="container-fluid py-3">
+  
+  <h2 class="pt-5 pb-3">スケジュール詳細</h2>
+  
+  <p id="notice"><%= notice %></p>
+  
+  <table class="col-md-6 schedule-detail">
+    <tbody>
+      <tr>
+        <th>タイトル</th>
+        <td><%= @schedule.title %></td>
+      </tr>
+      <tr>
+        <th>開始日</th>
+        <td><%= @schedule.start_date&.strftime('%Y年%m月%d日') %></td>
+      </tr>
+      <tr>
+        <th>終了日</th>
+        <td><%= @schedule.end_date&.strftime('%Y年%m月%d日') %></td>
+      </tr>
+      <tr>
+        <th>終日</th>
+        <td><%= @schedule.week_end == true ? "○" : "" %></td>
+      </tr>
+      <tr>
+        <th>メモ</th>
+        <td class="memo"><%= simple_format(@schedule.content) %></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <ul class="pt-3">
+    <li>
+      <%= link_to 'スケジュール一覧に戻る', schedules_path %>
+    </li>
+    <li>
+      <%= link_to 'スケジュールを削除', @schedule, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+    </li>
+    <li>
+      <%= link_to 'スケジュールを編集する', edit_schedule_path(@schedule) %>
+    </li>
+  </ul>
+</div>
